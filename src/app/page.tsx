@@ -23,8 +23,6 @@ export default function Home() {
   const [destination, setDestination] = React.useState<google.maps.LatLng | null>(null);
   const [waypoints, setWaypoints] = React.useState<(google.maps.LatLng | null)[]>([null]);
 
-  const [totalWaypoints, setTotalWaypoints] = React.useState<number>(1);
-
   const [directions, setDirections] = React.useState<google.maps.DirectionsResult | null>(null);
   const [distance, setDistance] = React.useState<string | undefined>(undefined);
   const [duration, setDuration] = React.useState<string | undefined>(undefined);
@@ -196,7 +194,7 @@ export default function Home() {
                   <div className="flex flex-col">
                     <div id="waypoint" className="space-y-2">
                       {
-                        Array.from(Array(totalWaypoints).keys()).map((key) => (
+                        Array.from(waypoints.keys()).map((key) => (
                           <div key={key} className="w-[90vw] md:w-80">
                             <label htmlFor="waypoint" className="hidden md:block mb-1 text-sm font-medium">Waypoint {key+1}</label>
                               <div className="flex bg-white rounded-lg">
@@ -241,7 +239,7 @@ export default function Home() {
                         ))
                       }
                     </div>
-                    <div className="flex justify-end text-sm font-light mr-1 space-x-1 items-center" onClick={() => setTotalWaypoints(totalWaypoints+1)}>
+                    <div className="flex justify-end text-sm font-light mr-1 space-x-1 items-center" onClick={() => setWaypoints([...waypoints, null])}>
                       <Image src="/add.svg" alt="add" width={15} height={15}></Image>
                       <p>Add Another Stop</p>
                     </div>
