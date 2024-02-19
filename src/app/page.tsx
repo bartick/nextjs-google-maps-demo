@@ -288,7 +288,7 @@ export default function Home() {
                 <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-3xl text-sm md:px-9 px-5 py-2.5 me-2 mb-2 mr-28 ml-28 md:ml-0 md:mr-0 " onClick={CalculateDistance}>Calculate</button>
               </div>
             </div>
-            <div className="border-2 md:w-[41rem] w-[30rem] rounded-lg">
+            <div className="border-2 md:w-[41rem] w-[95%] rounded-lg">
               <div className="flex justify-center bg-white h-20">
                 <div className="flex justify-between items-center h-20 w-96 text-2xl">
                   <p className="">Distance</p>
